@@ -7,12 +7,13 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public items: FirebaseListObservable<any[]>;
+  public items: FirebaseListObservable<Trip[]>;
   public constructor(private _af: AngularFire) {
     this.items = _af.database.list('/items');
   }
 
-  public save() {
-    this.items.push({'name': 'foo', 'val': 'bar'});
+  public add(trip: Trip) {
+    console.log("add trip " + trip);
+    this.items.push(trip);
   }
 }

@@ -7,6 +7,7 @@ import { MaterialModule } from '@angular/material'
 
 import { AppComponent } from './app.component';
 import 'hammerjs';
+import { CreateTripComponent } from './create-trip/create-trip.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBQNRIJboG04NYmD-VxJQHBppB7RIVLWrM",
@@ -18,7 +19,8 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CreateTripComponent
   ],
   imports: [
     BrowserModule,

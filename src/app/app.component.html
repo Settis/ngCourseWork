@@ -1,6 +1,16 @@
-<ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.name}} - {{item.val}}
-  </li>
-</ul>
-<button md-raised-button (click)="save()">Create</button>
+<div class="main">
+  <md-list>
+    <md-list-item *ngFor="let item of items | async">
+      <md-card>
+        <md-card-header>
+          <img md-card-avatar [src]="item.image"/>
+          <md-card-title>{{item.name}}</md-card-title>
+        </md-card-header>
+        <md-card-content>
+          {{item.description}}
+        </md-card-content>
+      </md-card>
+    </md-list-item>
+  </md-list>
+  <app-create-trip (onCreate)="add($event)"></app-create-trip>
+</div>
