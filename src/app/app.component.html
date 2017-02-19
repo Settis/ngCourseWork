@@ -1,5 +1,6 @@
 <ul>
   <li class="text" *ngFor="let item of items | async">
-    {{item.$value}}
+    {{item.name}} - {{item.val}}
   </li>
 </ul>
+<button (click)="save()">Create</button>
