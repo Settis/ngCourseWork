@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import { FirebaseListObservable } from 'angularfire2';
+import { TripService } from './common/trip.service';
+import {CreateTripService} from './common/create-trip.service';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +10,12 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 })
 export class AppComponent {
   public items: FirebaseListObservable<Trip[]>;
-  public constructor(private _af: AngularFire) {
-    this.items = _af.database.list('/items');
+  public constructor(private _tripService: TripService,
+                     private _createTripService: CreateTripService) {
+    this.items = _tripService.items;
   }
 
-  public add(trip: Trip) {
-    console.log("add trip " + trip);
-    this.items.push(trip);
+  public openAddTripDialog(): void {
+    this._createTripService.openDialog();
   }
 }
