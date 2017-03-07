@@ -12,7 +12,7 @@ export class CreateTripService {
   }
 
   public openDialog(): void {
-    let dialogRef: MdDialogRef<CreateTripDialogComponent> = this._dialog.open(CreateTripDialogComponent);
+    let dialogRef: MdDialogRef<CreateTripDialogComponent> = this._dialog.open(CreateTripDialogComponent, {width: '600px'});
     dialogRef.afterClosed().subscribe((result: Trip) => {
       if (result)
         this._trip.add(result)

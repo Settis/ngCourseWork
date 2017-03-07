@@ -3,3 +3,6 @@
 body {
   margin: auto;
 }
+.full-width {
+  width: 100%;
+}

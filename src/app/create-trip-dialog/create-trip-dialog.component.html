@@ -1,13 +1,18 @@
 <h1 md-dialog-title>Create new trip</h1>
 <md-dialog-content>
   <form [formGroup]="form">
-    <md-input-container>
+    <md-input-container class="full-width">
       <input mdInput placeholder="Name" formControlName="name">
     </md-input-container>
-    <md-input-container>
+    <md-input-container class="full-width">
       <input mdInput placeholder="Location" formControlName="location">
     </md-input-container>
-    <md-input-container>
+    <!--<md-autocomplete #auto="mdAutocomplete">-->
+      <!--<md-option *ngFor="let country of filteredCountries | async" [value]="country">-->
+        <!--{{ country }}-->
+      <!--</md-option>-->
+    <!--</md-autocomplete>-->
+    <md-input-container class="full-width">
       <textarea mdInput placeholder="Description" formControlName="description"></textarea>
     </md-input-container>
   </form>
