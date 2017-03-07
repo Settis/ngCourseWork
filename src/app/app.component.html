@@ -1,6 +1,7 @@
 <div class="main">
   <md-toolbar color="primary">
     <span>Places</span>
+    <button md-button [routerLink]="['/list']"><md-icon>view_list</md-icon>List</button>
     <span class="fill-remaining-space"></span>
     <button md-button (click)="openAddTripDialog()"><md-icon>add_box</md-icon>Add place</button>
   </md-toolbar>
