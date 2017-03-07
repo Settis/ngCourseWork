@@ -1,6 +1,7 @@
 import { ListComponent } from './list/list.component'
 
 import { Route } from '@angular/router';
+import {TripInfoComponent} from './trip-info/trip-info.component';
 
 export const routes: Route [] = [
   {
@@ -12,30 +13,19 @@ export const routes: Route [] = [
     path: 'list',
     component: ListComponent,
   },
-  // {
-  //   path: 'users',
-  //   children: [
-  //     {
-  //       path: '',
-  //       redirectTo: 'all',
-  //       pathMatch: 'full'
-  //     },
-  //     {
-  //       path: 'all',
-  //       component: UsersComponent,
-  //       data: { title: 'User list' },
-  //       resolve: {
-  //         users: UsersResolverService
-  //       },
-  //       canActivate:[GuardService]
-  //     },
-  //     {
-  //       path: 'user/:id',
-  //       component: UserComponent
-  //     }
-  //   ]
-  //
-  // },
+  {
+    path: 'trip',
+    children: [
+      {
+        path: 'all',
+        component: ListComponent,
+      },
+      {
+        path: ':id',
+        component: TripInfoComponent,
+      }
+    ]
+  },
   {
     path: '**',
     redirectTo: ''

@@ -1,7 +1,7 @@
 <md-list>
-  <md-list-item *ngFor="let item of trips | async">
+  <md-list-item *ngFor="let item of trips | async" [routerLink]="['/trip/'+item.$key]">
     <img md-list-avatar [src]="item.image" alt="icon">
-    <h3 md-line> {{item.name}} </h3>
+    <h1 md-line> {{item.name}} </h1>
     <p md-line>{{item.location}}</p>
   </md-list-item>
 </md-list>

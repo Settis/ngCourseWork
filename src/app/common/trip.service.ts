@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import {AngularFire, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2';
 
 @Injectable()
 export class TripService {
@@ -10,6 +10,14 @@ export class TripService {
 
   public add(trip: Trip) {
     this.items.push(trip);
+  }
+
+  public get(id: string): FirebaseObjectObservable<Trip> {
+    return this._af.database.object('/trips/'+id);
+  }
+
+  public delete(id: string): void {
+    this._af.database.object('/trips/'+id).remove();
   }
 
 }

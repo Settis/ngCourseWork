@@ -15,6 +15,7 @@ import { TripService } from './common/trip.service';
 import { CreateTripDialogComponent } from './create-trip-dialog/create-trip-dialog.component'
 import {CreateTripService} from './common/create-trip.service';
 import {CountryListService} from './common/country-list.service';
+import { TripInfoComponent } from './trip-info/trip-info.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBQNRIJboG04NYmD-VxJQHBppB7RIVLWrM",
@@ -28,7 +29,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     ListComponent,
-    CreateTripDialogComponent
+    CreateTripDialogComponent,
+    TripInfoComponent
   ],
   imports: [
     BrowserModule,

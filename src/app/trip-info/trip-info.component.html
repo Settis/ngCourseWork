@@ -1,0 +1,13 @@
+<md-card>
+  <md-card-header>
+    <md-card-title>{{(trip | async)?.name}}</md-card-title>
+    <md-card-subtitle>Location: {{(trip | async)?.location}}</md-card-subtitle>
+  </md-card-header>
+  <img md-card-image [src]="(trip | async)?.image">
+  <md-card-content>
+    <p>{{(trip | async)?.description}}</p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button (click)="delete()" [routerLink]="['']">Delete</button>
+  </md-card-actions>
+</md-card>
