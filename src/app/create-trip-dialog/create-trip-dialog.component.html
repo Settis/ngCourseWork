@@ -1,3 +1,18 @@
-<p>
-  create-trip-dialog works!
-</p>
+<h1 md-dialog-title>Create new trip</h1>
+<md-dialog-content>
+  <form [formGroup]="form">
+    <md-input-container>
+      <input mdInput placeholder="Name" formControlName="name">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Location" formControlName="location">
+    </md-input-container>
+    <md-input-container>
+      <textarea mdInput placeholder="Description" formControlName="description"></textarea>
+    </md-input-container>
+  </form>
+</md-dialog-content>
+<md-dialog-actions>
+  <button md-button [disabled]="!form.valid" (click)="createTrip()">Create trip</button>
+  <button md-button md-dialog-close>Close</button>
+</md-dialog-actions>

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from "angularfire2";
 import { MaterialModule } from '@angular/material';
@@ -31,11 +31,11 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     MaterialModule,
     RouterModule.forRoot(routes),
+    ReactiveFormsModule,
   ],
   providers: [
     TripService,
