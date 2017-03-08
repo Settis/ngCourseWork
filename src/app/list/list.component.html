@@ -1,6 +1,17 @@
+<div>
+  <md-input-container>
+    <input mdInput placeholder="Search" (input)="setFilter($event.target.value)">
+  </md-input-container>
+  <md-select placeholder="Order by" (change)="setOrder($event.value)">
+    <md-option value="name">Name</md-option>
+    <md-option value="location">Location</md-option>
+  </md-select>
+  <button md-mini-fab *ngIf="asc" (click)="toggleAsc()"><md-icon>arrow_drop_up</md-icon></button>
+  <button md-mini-fab *ngIf="!asc" (click)="toggleAsc()"><md-icon>arrow_drop_down</md-icon></button>
+</div>
 <md-list>
-  <md-list-item *ngFor="let item of trips | async" [routerLink]="['/trip/'+item.$key]">
-    <img md-list-avatar [src]="item.image" alt="icon">
+  <md-list-item *ngFor="let item of trips | async | tripFilter:filter | tripOrder:order:asc" [routerLink]="['/trip/'+item.$key]">
+    <img md-list-avatar [src]="item.image ? item.image : 'assets/images/mountain-draw.jpeg'" alt="icon">
     <h1 md-line> {{item.name}} </h1>
     <p md-line>{{item.location}}</p>
   </md-list-item>

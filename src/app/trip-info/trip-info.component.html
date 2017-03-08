@@ -3,7 +3,7 @@
     <md-card-title>{{(trip | async)?.name}}</md-card-title>
     <md-card-subtitle>Location: {{(trip | async)?.location}}</md-card-subtitle>
   </md-card-header>
-  <img md-card-image [src]="(trip | async)?.image">
+  <img md-card-image [src]="(trip | async)?.image ? (trip | async)?.image : 'assets/images/mountain-draw.jpeg'">
   <md-card-content>
     <p>{{(trip | async)?.description}}</p>
   </md-card-content>

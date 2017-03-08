@@ -10,9 +10,24 @@ import {FirebaseListObservable} from 'angularfire2';
 export class ListComponent {
 
   public trips: FirebaseListObservable<Trip[]>;
+  public asc: boolean = true;
+  public order: string;
+  public filter: string;
 
-  constructor(private _trip: TripService) {
+  public constructor(private _trip: TripService) {
     this.trips = this._trip.items;
+  }
+
+  public toggleAsc(): void {
+    this.asc = !this.asc;
+  }
+
+  public setOrder(order: string): void {
+    this.order = order;
+  }
+
+  public setFilter(filter: string): void {
+    this.filter = filter;
   }
 
 }
