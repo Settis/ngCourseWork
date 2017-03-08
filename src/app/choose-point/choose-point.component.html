@@ -1,0 +1,10 @@
+<h1 md-dialog-title>Choose point on map</h1>
+<md-dialog-content>
+  <sebm-google-map (mapClick)="mapClicked($event)" [zoom]="zoom">
+    <sebm-google-map-marker [latitude]="lat" [longitude]="lng" *ngIf="lat"></sebm-google-map-marker>
+  </sebm-google-map>
+</md-dialog-content>
+<md-dialog-actions>
+  <button md-button [disabled]="!lat" (click)="choose()">Choose</button>
+  <button md-button md-dialog-close>Close</button>
+</md-dialog-actions>

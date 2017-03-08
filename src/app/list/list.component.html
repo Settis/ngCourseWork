@@ -13,7 +13,7 @@
   <md-list-item *ngFor="let item of trips | async | tripFilter:filter | tripOrder:order:asc; let isEven=even"
                 [routerLink]="['/trip/'+item.$key]"
                 [ngClass]="{even: isEven}">
-    <img md-list-avatar [src]="item.image ? item.image : 'assets/images/mountain-draw.jpeg'" alt="icon">
+    <img md-list-avatar [src]="item.image ? item.image : 'assets/images/trolltunga.jpg'" alt="icon">
     <h1 md-line> {{item.name}} </h1>
     <p md-line>Location: {{item.location}}</p>
   </md-list-item>

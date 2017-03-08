@@ -7,6 +7,11 @@ type Trip = {
   lng: number;
 }
 
+type LatLng = {
+  lat: number;
+  lng: number;
+}
+
 type ListQueryParams = {
   filter?: string;
   order?: string;

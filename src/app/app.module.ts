@@ -20,6 +20,8 @@ import { TripFilterPipe } from './common/pipes/trip-filter.pipe';
 import { TripOrderPipe } from './common/pipes/trip-order.pipe';
 import {ErrorMessagesService} from './common/error-messages.service';
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { ChoosePointComponent } from './choose-point/choose-point.component';
+import {ChooseMapPointService} from './common/choose-map-point.service';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBQNRIJboG04NYmD-VxJQHBppB7RIVLWrM",
@@ -36,7 +38,8 @@ export const firebaseConfig = {
     CreateTripDialogComponent,
     TripInfoComponent,
     TripFilterPipe,
-    TripOrderPipe
+    TripOrderPipe,
+    ChoosePointComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ export const firebaseConfig = {
     CreateTripService,
     CountryListService,
     ErrorMessagesService,
+    ChooseMapPointService,
   ],
   bootstrap: [AppComponent],
   entryComponents: [CreateTripDialogComponent]

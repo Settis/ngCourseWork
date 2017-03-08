@@ -4,7 +4,7 @@
     <md-card-title>{{trip.name}}</md-card-title>
     <md-card-subtitle>Location: {{trip.location}}</md-card-subtitle>
   </md-card-header>
-  <img md-card-image [src]="trip.image ? trip.image : 'assets/images/mountain-draw.jpeg'">
+  <img md-card-image [src]="trip.image ? trip.image : 'assets/images/trolltunga.jpg'">
   <md-card-content>
     <sebm-google-map [latitude]="trip.lat" [longitude]="trip.lng">
       <sebm-google-map-marker [latitude]="trip.lat" [longitude]="trip.lng"></sebm-google-map-marker>

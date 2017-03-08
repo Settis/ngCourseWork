@@ -3,6 +3,7 @@ import {MdDialogRef} from '@angular/material';
 import {FormService} from './form.service';
 import {FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
+import {ChooseMapPointService} from '../common/choose-map-point.service';
 
 @Component({
   selector: 'app-create-trip-dialog',
@@ -17,7 +18,8 @@ export class CreateTripDialogComponent {
   public formErrors: {[key: string]: string};
 
   constructor(public dialogRef: MdDialogRef<CreateTripDialogComponent>,
-              private _formService: FormService) {
+              private _formService: FormService,
+              private _choosePoint: ChooseMapPointService) {
     this.form = _formService.form;
     this.filteredCountries = _formService.filteredCountries;
     this.formErrors = _formService.formErrors;
@@ -33,6 +35,15 @@ export class CreateTripDialogComponent {
       lng: parseFloat(this.form.getRawValue().lng),
     };
     this.dialogRef.close(trip);
+  }
+
+  public chooseCoordinates(): void {
+    this._choosePoint.openDialog(this.setCoord.bind(this));
+  }
+
+  public setCoord(coord: LatLng): void {
+    this.form.get('lat').setValue(coord.lat);
+    this.form.get('lng').setValue(coord.lng);
   }
 
 }

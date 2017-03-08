@@ -34,6 +34,9 @@
             <md-hint *ngIf="formErrors['lng']">{{formErrors['lng']}}</md-hint>
           </md-input-container>
         </td>
+        <td>
+          <button md-mini-fab (click)="chooseCoordinates()"><md-icon>place</md-icon></button>
+        </td>
       </tr>
     </table>
   </form>
