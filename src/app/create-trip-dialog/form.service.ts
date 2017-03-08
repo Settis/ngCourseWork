@@ -24,7 +24,7 @@ export class FormService {
                       private _errorMessage: ErrorMessagesService) {
     this.form = _fb.group({
       name: ['', [Validators.required, Validators.minLength(3), Validators.pattern(/^[\w ]+$/)]],
-      location: ['', [Validators.required, Validators.minLength(3), Validators.pattern(/^[\w ]+$/)]],
+      location: ['', [Validators.required, Validators.minLength(3)]],
       description: [''],
       image: [''],
       lat: ['', [Validators.required, Validators.pattern(/^-?\d+\.\d+$/)]],

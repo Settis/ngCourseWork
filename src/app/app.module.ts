@@ -60,6 +60,9 @@ export const firebaseConfig = {
     ChooseMapPointService,
   ],
   bootstrap: [AppComponent],
-  entryComponents: [CreateTripDialogComponent]
+  entryComponents: [
+    CreateTripDialogComponent,
+    ChoosePointComponent,
+  ]
 })
 export class AppModule { }
