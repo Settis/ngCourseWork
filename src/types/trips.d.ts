@@ -4,3 +4,9 @@ type Trip = {
   description: string;
   image: string;
 }
+
+type ListQueryParams = {
+  filter?: string;
+  order?: string;
+  asc?: boolean;
+}
