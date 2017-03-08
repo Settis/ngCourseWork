@@ -22,6 +22,7 @@ import {ErrorMessagesService} from './common/error-messages.service';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { ChoosePointComponent } from './choose-point/choose-point.component';
 import {ChooseMapPointService} from './common/choose-map-point.service';
+import { MapComponent } from './map/map.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBQNRIJboG04NYmD-VxJQHBppB7RIVLWrM",
@@ -39,7 +40,8 @@ export const firebaseConfig = {
     TripInfoComponent,
     TripFilterPipe,
     TripOrderPipe,
-    ChoosePointComponent
+    ChoosePointComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

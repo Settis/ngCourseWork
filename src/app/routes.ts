@@ -2,6 +2,7 @@ import { ListComponent } from './list/list.component'
 
 import { Route } from '@angular/router';
 import {TripInfoComponent} from './trip-info/trip-info.component';
+import {MapComponent} from './map/map.component';
 
 export const routes: Route [] = [
   {
@@ -12,6 +13,10 @@ export const routes: Route [] = [
   {
     path: 'list',
     component: ListComponent,
+  },
+  {
+    path: 'map',
+    component: MapComponent,
   },
   {
     path: 'trip',
