@@ -18,6 +18,8 @@ export class FormService {
       location: ['', Validators.required],
       description: [''],
       image: [''],
+      lat: [''],
+      lng: [''],
     });
     this.filteredCountries = this.form.get('name').valueChanges
       .startWith(null)

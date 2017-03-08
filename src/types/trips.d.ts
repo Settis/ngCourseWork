@@ -3,6 +3,8 @@ type Trip = {
   location: string;
   description: string;
   image: string;
+  lat: number;
+  lng: number;
 }
 
 type ListQueryParams = {

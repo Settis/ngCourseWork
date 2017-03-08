@@ -15,6 +15,23 @@
     <md-input-container class="full-width">
       <textarea mdInput placeholder="Description" formControlName="description"></textarea>
     </md-input-container>
+    <md-input-container class="full-width">
+      <input mdInput placeholder="Image url" formControlName="image">
+    </md-input-container>
+    <table>
+      <tr>
+        <td>
+          <md-input-container>
+            <input mdInput placeholder="Lat" formControlName="lat">
+          </md-input-container>
+        </td>
+        <td>
+          <md-input-container>
+            <input mdInput placeholder="Lng" formControlName="lng">
+          </md-input-container>
+        </td>
+      </tr>
+    </table>
   </form>
 </md-dialog-content>
 <md-dialog-actions>
