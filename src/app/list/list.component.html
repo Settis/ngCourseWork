@@ -1,6 +1,6 @@
 <div>
   <md-input-container class="search">
-    <input mdInput placeholder="Search" (input)="setFilter($event.target.value)">
+    <input mdInput placeholder="Search" (input)="setFilter($event.target.value)" [value]="filter">
   </md-input-container>
   <md-select placeholder="Order by" (change)="setOrder($event.value)">
     <md-option value="name">Name</md-option>
