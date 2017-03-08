@@ -13,7 +13,7 @@ export class ListComponent implements OnInit{
   public ngOnInit(): void {
     this._activatedRoute.queryParams.subscribe((params: ListQueryParams) => {
       if (params) {
-        this.filter = params.filter;
+        this.filter = params.filter || '';
         this.order = params.order;
         this.asc = params.asc;
       }
@@ -23,7 +23,7 @@ export class ListComponent implements OnInit{
   public trips: FirebaseListObservable<Trip[]>;
   public asc: boolean = true;
   public order: string;
-  public filter: string;
+  public filter: string = '';
 
   public constructor(private _trip: TripService,
                      private _activatedRoute: ActivatedRoute,
