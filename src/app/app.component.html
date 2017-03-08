@@ -1,9 +1,13 @@
 <div>
   <md-toolbar color="primary">
-    <span>Places</span>
-    <button md-button [routerLink]="['/list']"><md-icon>view_list</md-icon>List</button>
-    <span class="fill-remaining-space"></span>
-    <button md-button (click)="openAddTripDialog()"><md-icon>add_box</md-icon>Add place</button>
+    <div class="page-width">
+      <span>Places</span>
+      <button md-button [routerLink]="['/list']"><md-icon>view_list</md-icon>List</button>
+      <span class="fill-remaining-space"></span>
+      <button md-button (click)="openAddTripDialog()"><md-icon>add_box</md-icon>Add place</button>
+    </div>
   </md-toolbar>
-  <router-outlet></router-outlet>
+  <div class="page-width">
+    <router-outlet class="router"></router-outlet>
+  </div>
 </div>
