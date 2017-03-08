@@ -14,11 +14,13 @@ export class CreateTripDialogComponent {
 
   public form: FormGroup;
   public filteredCountries: Observable<String[]>;
+  public formErrors: {[key: string]: string};
 
   constructor(public dialogRef: MdDialogRef<CreateTripDialogComponent>,
               private _formService: FormService) {
     this.form = _formService.form;
     this.filteredCountries = _formService.filteredCountries;
+    this.formErrors = _formService.formErrors;
   }
 
   public createTrip(): void {

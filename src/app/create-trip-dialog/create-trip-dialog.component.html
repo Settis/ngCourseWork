@@ -3,15 +3,17 @@
   <form [formGroup]="form">
     <md-input-container class="full-width">
       <input mdInput placeholder="Name" formControlName="name">
+      <md-hint *ngIf="formErrors['name']">{{formErrors['name']}}</md-hint>
     </md-input-container>
     <md-input-container class="full-width">
-      <input mdInput placeholder="Location" formControlName="location">
+      <input mdInput placeholder="Location" formControlName="location" [mdAutocomplete]="auto">
+      <md-hint *ngIf="formErrors['location']">{{formErrors['location']}}</md-hint>
     </md-input-container>
-    <!--<md-autocomplete #auto="mdAutocomplete">-->
-      <!--<md-option *ngFor="let country of filteredCountries | async" [value]="country">-->
-        <!--{{ country }}-->
-      <!--</md-option>-->
-    <!--</md-autocomplete>-->
+    <md-autocomplete #auto="mdAutocomplete">
+      <md-option *ngFor="let country of filteredCountries | async" [value]="country">
+        {{ country }}
+      </md-option>
+    </md-autocomplete>
     <md-input-container class="full-width">
       <textarea mdInput placeholder="Description" formControlName="description"></textarea>
     </md-input-container>
@@ -22,12 +24,14 @@
       <tr>
         <td>
           <md-input-container>
-            <input mdInput placeholder="Lat" formControlName="lat">
+            <input mdInput placeholder="Latitude" formControlName="lat">
+            <md-hint *ngIf="formErrors['lat']">{{formErrors['lat']}}</md-hint>
           </md-input-container>
         </td>
         <td>
           <md-input-container>
-            <input mdInput placeholder="Lng" formControlName="lng">
+            <input mdInput placeholder="Longitude" formControlName="lng">
+            <md-hint *ngIf="formErrors['lng']">{{formErrors['lng']}}</md-hint>
           </md-input-container>
         </td>
       </tr>

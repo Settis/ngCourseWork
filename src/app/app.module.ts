@@ -18,6 +18,7 @@ import {CountryListService} from './common/country-list.service';
 import { TripInfoComponent } from './trip-info/trip-info.component';
 import { TripFilterPipe } from './common/pipes/trip-filter.pipe';
 import { TripOrderPipe } from './common/pipes/trip-order.pipe';
+import {ErrorMessagesService} from './common/error-messages.service';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBQNRIJboG04NYmD-VxJQHBppB7RIVLWrM",
@@ -48,6 +49,7 @@ export const firebaseConfig = {
     TripService,
     CreateTripService,
     CountryListService,
+    ErrorMessagesService,
   ],
   bootstrap: [AppComponent],
   entryComponents: [CreateTripDialogComponent]

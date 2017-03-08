@@ -1,0 +1,9 @@
+md-list-item:hover {
+  background-color: #fda660;
+}
+.even {
+  background-color: antiquewhite;
+}
+.search {
+  width: 800px;
+}
