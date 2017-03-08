@@ -19,6 +19,7 @@ import { TripInfoComponent } from './trip-info/trip-info.component';
 import { TripFilterPipe } from './common/pipes/trip-filter.pipe';
 import { TripOrderPipe } from './common/pipes/trip-order.pipe';
 import {ErrorMessagesService} from './common/error-messages.service';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBQNRIJboG04NYmD-VxJQHBppB7RIVLWrM",
@@ -44,6 +45,9 @@ export const firebaseConfig = {
     MaterialModule,
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBNnBNenhERixAMQQxeshoeerY1BjuQZwQ'
+    })
   ],
   providers: [
     TripService,

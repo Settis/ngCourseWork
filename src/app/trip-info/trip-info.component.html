@@ -1,11 +1,15 @@
-<md-card>
+<md-spinner *ngIf="!trip"></md-spinner>
+<md-card *ngIf="trip">
   <md-card-header>
-    <md-card-title>{{(trip | async)?.name}}</md-card-title>
-    <md-card-subtitle>Location: {{(trip | async)?.location}}</md-card-subtitle>
+    <md-card-title>{{trip.name}}</md-card-title>
+    <md-card-subtitle>Location: {{trip.location}}</md-card-subtitle>
   </md-card-header>
-  <img md-card-image [src]="(trip | async)?.image ? (trip | async)?.image : 'assets/images/mountain-draw.jpeg'">
+  <img md-card-image [src]="trip.image ? trip.image : 'assets/images/mountain-draw.jpeg'">
   <md-card-content>
-    <p>{{(trip | async)?.description}}</p>
+    <sebm-google-map [latitude]="trip.lat" [longitude]="trip.lng">
+      <sebm-google-map-marker [latitude]="trip.lat" [longitude]="trip.lng"></sebm-google-map-marker>
+    </sebm-google-map>
+    <p>{{trip.description}}</p>
   </md-card-content>
   <md-card-actions>
     <button md-button (click)="delete()" [routerLink]="['']">Delete</button>

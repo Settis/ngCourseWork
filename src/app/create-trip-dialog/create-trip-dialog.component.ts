@@ -24,7 +24,15 @@ export class CreateTripDialogComponent {
   }
 
   public createTrip(): void {
-    this.dialogRef.close(this.form.getRawValue());
+    const trip: Trip = {
+      name: this.form.getRawValue().name,
+      location: this.form.getRawValue().location,
+      description: this.form.getRawValue().description,
+      image: this.form.getRawValue().image,
+      lat: parseFloat(this.form.getRawValue().lat),
+      lng: parseFloat(this.form.getRawValue().lng),
+    };
+    this.dialogRef.close(trip);
   }
 
 }

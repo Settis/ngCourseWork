@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {FirebaseObjectObservable} from 'angularfire2';
 import {TripService} from '../common/trip.service';
 
 @Component({
@@ -11,7 +10,7 @@ import {TripService} from '../common/trip.service';
 export class TripInfoComponent implements OnInit {
 
   public id: string;
-  public trip: FirebaseObjectObservable<Trip>;
+  public trip: Trip;
 
   public constructor(private _activatedRoute: ActivatedRoute,
                      private _tripService: TripService) { }
@@ -20,7 +19,7 @@ export class TripInfoComponent implements OnInit {
     this._activatedRoute.params.subscribe(
       (params: {id: string}) => {
         this.id = params.id;
-        this.trip = this._tripService.get(this.id);
+        this._tripService.get(this.id).subscribe((trip: Trip) => this.trip = trip)
       });
   }
 
