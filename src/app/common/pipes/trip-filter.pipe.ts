@@ -6,6 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TripFilterPipe implements PipeTransform {
 
   public transform(input: Trip[], pattern: string): Trip[] {
+    if (!input)
+      return [];
     if (!pattern)
       return input;
     return input.filter((trip: Trip): boolean => {
