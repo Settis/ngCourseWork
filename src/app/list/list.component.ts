@@ -8,17 +8,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit{
-
-  public ngOnInit(): void {
-    this._activatedRoute.queryParams.subscribe((params: ListQueryParams) => {
-      if (params) {
-        this.filter = params.filter || '';
-        this.order = params.order;
-        this.asc = params.asc;
-      }
-    })
-  }
+export class ListComponent implements OnInit {
 
   public trips: FirebaseListObservable<Trip[]>;
   public asc: boolean = true;
@@ -29,6 +19,16 @@ export class ListComponent implements OnInit{
                      private _activatedRoute: ActivatedRoute,
                      private _router: Router) {
     this.trips = this._trip.items;
+  }
+
+  public ngOnInit(): void {
+    this._activatedRoute.queryParams.subscribe((params: ListQueryParams) => {
+      if (params) {
+        this.filter = params.filter || '';
+        this.order = params.order;
+        this.asc = params.asc;
+      }
+    });
   }
 
   public toggleAsc(): void {
@@ -47,7 +47,7 @@ export class ListComponent implements OnInit{
   }
 
   private updateNav(): void {
-    let params: ListQueryParams = {
+    const params: ListQueryParams = {
       filter: this.filter,
       order: this.order,
       asc: this.asc,

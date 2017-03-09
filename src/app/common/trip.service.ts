@@ -4,20 +4,20 @@ import {AngularFire, FirebaseListObservable, FirebaseObjectObservable} from 'ang
 @Injectable()
 export class TripService {
   public items: FirebaseListObservable<Trip[]>;
-  constructor(private _af: AngularFire) {
+  public constructor(private _af: AngularFire) {
     this.items = _af.database.list('/trips');
   }
 
-  public add(trip: Trip) {
+  public add(trip: Trip): void {
     this.items.push(trip);
   }
 
   public get(id: string): FirebaseObjectObservable<Trip> {
-    return this._af.database.object('/trips/'+id);
+    return this._af.database.object('/trips/' + id);
   }
 
   public delete(id: string): void {
-    this._af.database.object('/trips/'+id).remove();
+    this._af.database.object('/trips/' + id).remove();
   }
 
 }

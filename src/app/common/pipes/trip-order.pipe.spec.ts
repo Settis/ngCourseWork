@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { TripOrderPipe } from './trip-order.pipe';
 
 describe('TripOrderPipe', () => {

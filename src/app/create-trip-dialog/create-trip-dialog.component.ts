@@ -17,7 +17,7 @@ export class CreateTripDialogComponent {
   public filteredCountries: Observable<String[]>;
   public formErrors: {[key: string]: string};
 
-  constructor(public dialogRef: MdDialogRef<CreateTripDialogComponent>,
+  public constructor(public dialogRef: MdDialogRef<CreateTripDialogComponent>,
               private _formService: FormService,
               private _choosePoint: ChooseMapPointService) {
     this.form = _formService.form;

@@ -15,7 +15,7 @@ export class ChoosePointComponent {
 
   public constructor(public dialogRef: MdDialogRef<ChoosePointComponent>) {};
 
-  public mapClicked(event: any): void {
+  public mapClicked(event: MapMouseEvent): void {
     this.lat = event.coords.lat;
     this.lng = event.coords.lng;
   }

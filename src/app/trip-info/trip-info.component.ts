@@ -19,7 +19,7 @@ export class TripInfoComponent implements OnInit {
     this._activatedRoute.params.subscribe(
       (params: {id: string}) => {
         this.id = params.id;
-        this._tripService.get(this.id).subscribe((trip: Trip) => this.trip = trip)
+        this._tripService.get(this.id).subscribe((trip: Trip) => this.trip = trip);
       });
   }
 

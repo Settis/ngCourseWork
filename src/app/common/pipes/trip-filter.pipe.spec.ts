@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { TripFilterPipe } from './trip-filter.pipe';
 
 describe('TripFilterPipe', () => {

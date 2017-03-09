@@ -12,7 +12,7 @@ export class MapComponent {
   public zoom: number = 2;
   public places: FirebaseListObservable<Trip[]>;
 
-  constructor(private _tripService: TripService) {
+  public constructor(private _tripService: TripService) {
     this.places = _tripService.items;
   }
 

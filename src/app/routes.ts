@@ -1,4 +1,4 @@
-import { ListComponent } from './list/list.component'
+import { ListComponent } from './list/list.component';
 
 import { Route } from '@angular/router';
 import {TripInfoComponent} from './trip-info/trip-info.component';

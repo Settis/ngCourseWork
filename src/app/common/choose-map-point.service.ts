@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { Injectable } from '@angular/core';
 import {MdDialog, MdDialogRef} from '@angular/material';
 import {ChoosePointComponent} from '../choose-point/choose-point.component';

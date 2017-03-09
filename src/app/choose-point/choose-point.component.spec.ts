@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChoosePointComponent } from './choose-point.component';

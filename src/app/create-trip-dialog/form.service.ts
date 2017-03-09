@@ -32,17 +32,18 @@ export class FormService {
     });
     this.filteredCountries = this.form.get('location').valueChanges
       .startWith(null)
-      .map(location => this.filterCountries(location));
+      .map((location: string) => this.filterCountries(location));
     this.form.valueChanges.subscribe(() => this.checkForm());
     this.checkForm();
   }
 
   private filterCountries(val: string): String[] {
-    return val ? this._countryList.countries.filter((s:string) => new RegExp(val, 'gi').test(s)) : this._countryList.countries;
+    return val ? this._countryList.countries.filter((s: string) =>
+        new RegExp(val, 'gi').test(s)) : this._countryList.countries;
   }
 
   private checkForm(): void {
-    this._errorMessage.setFormErrorMessages(this.form, this.formErrors)
+    this._errorMessage.setFormErrorMessages(this.form, this.formErrors);
   }
 
 }
